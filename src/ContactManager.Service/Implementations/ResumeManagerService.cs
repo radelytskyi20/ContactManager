@@ -15,6 +15,20 @@ namespace ContactManager.Service.Implementations
             _resumeRepository = resumeRepository;
         }
 
+        public async Task AddAsync(string name, DateOnly birthDate, bool married, string phone, decimal salary)
+        {
+            var resume = new Resume
+            {
+                Name = name,
+                BirthDate = birthDate,
+                Married = married,
+                Phone = phone,
+                Salary = salary
+            };
+
+            await _resumeRepository.CreateAsync(resume);
+        }
+
         public async Task<IReadOnlyCollection<Resume>> GetAllAsync() => await _resumeRepository.GetAllAsync();
         public async Task<Resume?> GetOneAsync(Guid id) => await _resumeRepository.GetOneAsync(id);
         public async Task<ServiceResponse> UpdateAsync(Guid id, string? name, DateOnly? birthDate, bool? married,
@@ -23,7 +37,7 @@ namespace ContactManager.Service.Implementations
             var resumeToUpdate = await _resumeRepository.GetOneAsync(id);
             if (resumeToUpdate is null)
             {
-                return ServiceResponse.Failure(ResumeManagerServiceErrors.ResumeNotFound);
+                return ServiceResponse.Failure(ErrorMessages.ResumeNotFound);
             }
 
             resumeToUpdate.Name = name ?? resumeToUpdate.Name;
@@ -41,7 +55,7 @@ namespace ContactManager.Service.Implementations
             var resumeToDelete = await _resumeRepository.GetOneAsync(id);
             if (resumeToDelete is null)
             {
-                return ServiceResponse.Failure(ResumeManagerServiceErrors.ResumeNotFound);
+                return ServiceResponse.Failure(ErrorMessages.ResumeNotFound);
             }
 
             await _resumeRepository.DeleteAsync(resumeToDelete);
