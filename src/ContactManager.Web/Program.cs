@@ -1,7 +1,9 @@
+using ContactManager.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+builder.Services.AddPersistence(builder.Configuration);
 
 var app = builder.Build();
 
@@ -14,12 +16,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapRazorPages();
-
+app.MapControllers();
 app.Run();
