@@ -98,9 +98,9 @@ function orderByResumes(list) {
 }
 
 //OPERATION: LOAD
-async function loadResumes(list) {
+async function loadResumes() {
     await loadResumesData();
-    loadResumesRepresentations(list);
+    loadResumesRepresentations(resumeList);
 }
 function loadResumesRepresentations(list) {
     for (resume of list) {
@@ -151,7 +151,7 @@ async function removeResume(entityId) {
 
         alert("Resume removed successfully!");
         clearResumes();
-        await loadResumes(null);
+        await loadResumes();
 
     } catch (e) {
         console.log("Exception", e);
