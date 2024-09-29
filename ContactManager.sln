@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.Web", "src\ContactManager.Web\ContactManager.Web.csproj", "{3F07CEDC-836A-4709-A1B8-0FC18B06DC28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.Service", "src\ContactManager.Service\ContactManager.Service.csproj", "{FA89E5B8-3FAD-4986-8A8E-654CF4582809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3F07CEDC-836A-4709-A1B8-0FC18B06DC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F07CEDC-836A-4709-A1B8-0FC18B06DC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F07CEDC-836A-4709-A1B8-0FC18B06DC28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA89E5B8-3FAD-4986-8A8E-654CF4582809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA89E5B8-3FAD-4986-8A8E-654CF4582809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA89E5B8-3FAD-4986-8A8E-654CF4582809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA89E5B8-3FAD-4986-8A8E-654CF4582809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{E4428002-830B-49B7-9123-6B3B76E8255F} = {E3C0B86C-8DFF-402F-BFAC-98A35394B654}
 		{E4EC890A-1B81-407E-A062-6525B84BEFFC} = {56EFF142-5953-4383-A668-70295CB605E4}
 		{3F07CEDC-836A-4709-A1B8-0FC18B06DC28} = {B0BF29E0-1089-4703-BF46-0CCFED2BCB93}
+		{FA89E5B8-3FAD-4986-8A8E-654CF4582809} = {E3C0B86C-8DFF-402F-BFAC-98A35394B654}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B2052FE-0850-4AA7-8E98-01D097DC2A45}
