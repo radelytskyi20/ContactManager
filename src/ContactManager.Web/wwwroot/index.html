@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Main page</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+
+    <div class="container text-center">
+        <form class="row justify-content-start">
+            <div class="col">
+                <label class="form-label" for="orderByInput">OrderBy</label>
+                <select class="form-select" id="orderByInput">
+                    <option value="" selected>Select...</option>
+                    <option value="name">Name</option>
+                    <option value="name-desc">Name desc</option>
+                    <option value="birth-date">Birth date</option>
+                    <option value="birth-date-desc">Birth date desc</option>
+                    <option value="married">Married</option>
+                    <option value="married-desc">Married desc</option>
+                    <option value="phone">Phone</option>
+                    <option value="phone-desc">Phone desc</option>
+                    <option value="salary">Salary</option>
+                    <option value="salary-desc">Salary desc</option>
+                </select>
+            </div>
+            <div class="col">
+                <label class="form-label" for="nameFilter">Name filter</label>
+                <input type="text" class="form-control" id="nameFilter">
+            </div>
+
+            <div class="col">
+                <label class="form-label" for="marriedFilter">Married</label>
+                <select class="form-select" id="marriedFilter">
+                    <option value="" selected>Select...</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </div>
+            <div class="col">
+                <label class="form-label" for="nameFilter">Phone filter</label>
+                <input type="tel" class="form-control" id="phoneFilter">
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <p class="text-center fw-bold">Birth date filter</p>
+                    <label class="form-label" for="startBirthFilter">Start</label>
+                    <input type="date" class="form-control" id="startBirthFilter">
+                    <label class="form-label" for="endBirthDate">End</label>
+                    <input type="date" class="form-control" id="endBirthDate">
+                </div>
+                <div class="col">
+                    <p class="text-center fw-bold">Salary filter</p>
+                    <label class="form-label" for="startSalaryFilter">Start</label>
+                    <input type="number" class="form-control" id="startSalaryFilter">
+                    <label class="form-label" for="endSalaryFilter">End</label>
+                    <input type="number" class="form-control" id="endSalaryFilter">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+        </form>
+
+        <div class="row mt-2 mb-2">
+            <button type="button" class="btn btn-success" id="addResumeButton">Add CSV</button>
+        </div>
+
+        <div class="row fs-4 fw-bold">
+            <p class="col">Name</p>
+            <p class="col">Birth date</p>
+            <p class="col">Married</p>
+            <p class="col">Phone</p>
+            <p class="col">Salary</p>
+            <p class="col">Action</p>
+        </div>
+    </div>
+
+    <script src="lib/axios/axios.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>
