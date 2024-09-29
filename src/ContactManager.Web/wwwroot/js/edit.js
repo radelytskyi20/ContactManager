@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     } catch (e) {
         console.log("Exception", e);
+        alert("An error occurred while loading the resume to be edited!");
     }
 });
 
@@ -26,6 +27,7 @@ form.addEventListener("submit", async (event) => {
 
     } catch (e) {
         console.log("Exception", e);
+        alert("An error occurred while updating the resume!");
     }
 })
 

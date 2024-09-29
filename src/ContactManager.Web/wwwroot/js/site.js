@@ -1,11 +1,17 @@
 ﻿const container = document.querySelector(".container");
 const filterForm = document.querySelector("form");
+const addResumeButton = document.querySelector("#addResumeButton");
 const resumeList = [];
 
 document.addEventListener("DOMContentLoaded", async (event) => {
     await loadResumes(resumeList);
 });
 
+
+//OPERATION: ADD RESUME
+addResumeButton.addEventListener("click", (event) => {
+    window.location.href = "add.html";
+})
 
 //OPERATION: FILTER
 filterForm.addEventListener("submit", (event) => {
@@ -110,11 +116,11 @@ async function loadResumesData() {
         const response = await axios.get(`https://localhost:5003/resumes`);
         resumeList.length = 0;
         for (resume of response.data) {
-            resumeList.push(resume);
-        }
+            resumeList.push(resume);       }
 
     } catch (e) {
         console.log("Exception", e);
+        alert ("An error occurred while loading the resumes!");
     }
 }
 function createResumeDisplayHtml(resume) {
@@ -145,10 +151,11 @@ async function removeResume(entityId) {
 
         alert("Resume removed successfully!");
         clearResumes();
-        await loadResumes();
+        await loadResumes(null);
 
     } catch (e) {
         console.log("Exception", e);
+        alert("An error occurred while removing the resume!");
     }
 }
 function setDeleteButtonsListener() {
